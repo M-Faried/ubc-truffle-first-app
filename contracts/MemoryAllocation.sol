@@ -7,12 +7,11 @@ contract MemoryAllocation {
     uint[] points;
 
 
-    function localVariables() {
-        uint[] localArray; // If you don't storage, it will be created in storage by default in previous versions.
+    function localVariables() public {
+        uint[] storage localArray; // If you don't storage, it will be created in storage by default in previous versions.
         uint[] storage localStorageArray;
         uint[] memory  memoryArray; // Located in the memory and not the storage.
-
         // Creates a reference to the storage array.
-        uint[] memory pointer = points;
+        uint[] memory pointer = points;        
     }
 }
