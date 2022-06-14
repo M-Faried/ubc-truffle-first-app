@@ -9,6 +9,9 @@ contract BasicDataTypes {
     
     // This is the same as int256
     int number;
+
+    // The following is 16 bit and can hold a value up to 255
+    int8 number2; 
     
     bool public flag = true;
     uint ownerInitialBalance;
