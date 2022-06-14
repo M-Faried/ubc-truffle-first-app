@@ -1,11 +1,18 @@
 pragma solidity ^0.8.0;
 
 contract BasicDataTypes {
+    // The size can be increased in 8 increments.
     uint8 a = 255;
+
+    // The size of the address is 20 bytes.
     address public owner;
+    
+    // This is the same as int256
+    int number;
+    
     bool public flag = true;
     uint ownerInitialBalance;
-    
+
     function initFromAddr(address addr) public returns(uint) {
         owner = addr;
         ownerInitialBalance = owner.balance;
