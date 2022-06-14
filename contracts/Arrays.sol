@@ -12,7 +12,7 @@ contract Arrays {
     function getSomething() public view {
         
         // How to initialize a dynamic array.
-        dynamicArray = new bool[](8);
+        // dynamicArray = new bool[](8); // This won't compile as dynamic arrays can't be initialized in view functions which are not suppozed to alter the state of the contract.
 
         uint8 sLength = uint8(staticArray.length);
         uint8 dLength = uint8(dynamicArray.length);
@@ -25,11 +25,11 @@ contract Arrays {
         // arr2.push(3);// This won't compile since push is not available outside of storage arrays.
 
         
-        uint8[] storage arr3 = new uint8[](3); // This will not compile as you initialize a statis array using the dynamic way of initializtion.
-        arr3.push(4); // This will work fine as the array is declared as dynamic storage array.
+        // uint8[] storage arr3 = new uint8[](3); // This will not compile as you initialize a statis array using the dynamic way of initializtion.
+        // arr3.push(4); // This will work fine as the array is declared as dynamic storage array.
 
         uint8[] memory dynamicMemoryArray;
-        dynamicMemoryArray = [uint8(1), 2]; // This won't work because we used the static method to init a dynamic array.
+        // dynamicMemoryArray = [uint8(1), 2]; // This won't work because we used the static method to init a dynamic array.
     }
 
 }
